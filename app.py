@@ -4,7 +4,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 from groq import Groq
 from test import read_text_from_file
 import os
-os.system(' export GROQ_API_KEY=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')
+os.system('export GROQ_API_KEY=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')
 
 client = Groq(api_key='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')
 vectorizer = TfidfVectorizer()
