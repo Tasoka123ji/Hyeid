@@ -12,6 +12,7 @@ app = Flask(__name__)
 
 
 
+
 def foo(query, top_k=2):
 
     document_text = read_text_from_file('data.txt')
