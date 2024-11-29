@@ -1,0 +1,785 @@
+General
+● Photo adding can be skipped when adding card, profile or gov photo. When skipped, the
+placeholder image should be automatically placed.
+● At any step of the application form, the user can close the page and be able to continue from the
+same page anytime. The system should save the information as draft and no information should be
+lost.
+● When adding a family member and not completing the application form, the incomplete
+application should be shown in the members list on the very top. In case of no photo, show the
+default photo thumbnail.
+● Incomplete application considers the user has not clicked on the “Finish” button on the last step.
+● It should be able to remove and edit the incomplete application form.
+● When filling the application/adding member and clicking on the Cancel button, a dialogue box
+should be shown to the user:
+○ Option 1: close and save, leaving the application incomplete
+○ Option 2: cancel and delete, deleting the application and previously saved steps completely
+● In case there’s an incomplete member profile, the add member button should be disabled and the
+user should be guided to complete the member’s application in order to be able to add a new
+member
+Changing Card Info
+● No Active HyeID Card Holder can change any of their information (name, last name, dob, address,
+gender)
+● They can change till Approved status, and if they change, it should revert the user status to
+pending payment
+APPLICATION PROCESS
+Step 1
+- First Name
+- Last Name
+- Tick the checkbox to skip the step of filling name/surname in armenian
+- Open Armenian keyboard
+- First Name in Armenian
+- Last Name in Armenian
+- Date of birth: Day/Month/Year
+- Gender: Male/Female
+- Cancel button
+- Back button
+- “Next” button to proceed to the next step
+Step 2
+-
+-
+-
+-
+-
+-
+Country
+State/Region
+City
+Address
+ZIP Code
+Cancel button-
+-
+Back button
+“Next” button to proceed to the next step
+Step 3: Add profile photo
+- The step can be skipped
+- “Take a photo” button to set a photo with camera mode
+- Skip button
+- Next button (disabled till the photo is saved)
+- When taking a photo it should be possible to open the gallery to choose a photo
+- After taking or choosing a photo:
+- “Detect and Crop” icon should be available to activate the cropping mode with outlines
+- Choose photo
+- Open camera
+- Cancel
+- “Save” button to save the cropped image
+- After saving the photo:
+- Take photo
+- Choose photo
+- Skip
+- Next
+Step 4: Add government photo
+- “Take a photo” button to set a photo with camera mode
+- When starting to take a photo, the user should be able to choose a photo from the device
+gallery by clicking on the “Open Gallery” button.
+- “X” button to close the camera mode
+- After taking a photo:
+- Crop
+- Choose photo
+- Open camera
+- Cancel
+- “Save” button to save the cropped image
+- Take photo
+- “Choose Photo” to choose a new photo from the device gallery
+- “Skip for now” button to proceed to the next screen without setting a photo
+- “Next” button to proceed to the next screen, when the photo is chosen.
+Step 5: Additional information
+- Ancestors Origin
+- Arm Org Affinity
+- Profession
+- Education
+- Line of Business
+- Go back to the previous screen with back arrow button
+- “Finish” button to proceed to the profile pageAdd Family Member
+● When adding a family member and not completing the application form, the incomplete
+application should be shown in the members list on the very top
+● Incomplete application considers the user has not clicked on the “Finish” button on the last step.
+● It should be able to remove and edit incomplete application from
+● When filling the application/adding member and clicking on the Cancel button, a dialogue box
+should be shown to the user:
+○ Option 1: close and save, leaving the application incomplete
+○ Option 2: cancel and delete, deleting the application and previously saved steps completely
+● In case there’s an incomplete member profile, the add member button should be disabled and the
+user should be guided to complete the member’s application in order to be able to add a new
+member
+......
+
+
+
+AUTH LOGIN
+As an Auth user, I want to log in using my email address or phone number so that I can access my account
+securely.
+●
+●
+●
+●
+●
+The login page must have a field for entering a username and a password.
+The username field should validate the format of the email address or phone number.
+The system should authenticate the username and password combination.
+If the username or password is incorrect, the system should display an appropriate error message.
+Upon successful login, users should be redirected to their home page.
+AUTH REGISTER
+When registering the user should pass the following flow:
+- Enter phone number
+- Enter the verification code received by the phone number entered on the previous step
+- Enter First Name, Last Name, Email address
+- Enter the verification code received by email entered on the previous step
+- Create password
+In case more than one user is passing the registration process with the same phone number or same email
+address, the number/email is set for the user who completes the process first and creates the account. All other
+users who haven’t finished the registration process with the same phone number or email address, are removed
+from the database after a timeout (to be done).
+FORGOT PASSWORD
+When recovering the password the user should pass the following flow:
+-
+-
+-
+-
+-
+The login page should have a “Forgot Password” link.
+Clicking the link should prompt the user to enter their registered email address or phone number.
+The system should validate the email address/phone number format.
+Upon valid email/phone number submission, the system should send a verification code to the registered
+email address/phone number.
+By entering the ver code the user should be able to set a new password.
+CHANGE PASSWORD
+When changing the password the user should pass the following flow:
+- Enter old password
+- Create new password/Confirm
+- Choose whether to logout or not
+
+......
+
+
+
+Polling System
+Executive Summary
+This document outlines a comprehensive set of acceptance criteria for various user stories related to poll
+management and participation in the HyeID platform based on Mastodon API. These acceptance criteria
+cover the perspectives of both administrators (admins) who create and manage polls and participants who
+engage in polls on the platform. By following these acceptance criteria, social media platforms can ensure a
+seamless and transparent polling experience for both administrators and participants, fostering user
+engagement and facilitating data-driven decision-making.
+User Stories
+As a HyeID admin I want to be able to:
+Create polls from the admin panel so that I can engage users and gather their opinions on various topics or
+issues.
+Acceptance Criteria:
+○ From the admin dashboard or poll management section, there should be an option to create a
+new poll.
+○ The poll description and options are not empty.
+○ The admin should have the option to:
+■ Publish Immediately: Publish the poll as soon as it's created.
+■ Schedule Publication: Set a specific date and time for the poll to be published.
+○ The admin should be able to set the privacy of the poll: members only / public
+○ If the admin chooses to publish the poll immediately or schedule its publication, there should
+be an option to set the duration of the poll.
+○ The admin can choose a specific start/end date and time for the poll.
+○ There should be a preview option that allows the admin to review how the poll will appear to
+users before finalizing and publishing it.
+○ There should be a "Publish" button that allows the admin to save the poll and make it live
+according to the chosen publishing options.
+○ There should be a "Cancel" or "Discard" button that allows the admin to cancel the poll
+creation process, with a confirmation prompt to prevent accidental data loss.
+○ be able to view the results of a poll after it has ended, provided that the admin has enabled
+this feature based on privacy settings.
+Include a body text for the poll, allowing me to format the text as needed, making it more visually
+appealing and engaging for participants.
+Acceptance Criteria:
+○ The description field accepts text input and can accommodate 1000 characters.
+○ I should be able to edit the description of the poll even after it has been created, allowing for
+updates and improvements as needed.○ if any of the questions in a poll has at least one response, I cannot change the privacy settings
+of the poll.
+Edit the body text of a poll, enabling me to update or modify the content as needed.
+Acceptance Criteria:
+○ From the admin dashboard or poll management section, there should be a clear and accessible
+option to edit the selected poll.
+○ For published polls, it should be possible to edit questions and options texts only, as well as
+add options to existing questions
+○ There should be a field to edit the description of the poll.
+○ The description field should allow the admin to input a new description.
+○ There should be a "Save" or "Update" button that allows the admin to save the edited
+description.
+○ Upon clicking the "Save" button, the changes should be saved, and the updated description
+should be displayed on the poll.
+○ There should be a "Cancel" or "Discard Changes" button that allows the admin to cancel the
+editing process. Clicking this button should discard any changes made to the title and
+description fields.
+○ if any of the questions in a poll has at least one response, I cannot change the privacy settings
+of the poll.
+Create a poll with a scheduled start date and end date, so that users can participate within a specific
+timeframe.
+Acceptance Criteria:
+○ Minimum timeframe: 1 hour
+○ Maximum timeframe: 30 days
+○ Start Date and Time: The date and time when the poll will become active and users can start
+participating.
+○ In case the poll is being published immediately without scheduling, the duration of the poll
+being live should be set.
+○ End Date and Time: The date and time when the poll will expire, and users can no longer
+participate.
+○ The start date and time must be in the future.
+○ be able to view the results of a poll after it has ended, provided that the admin has enabled
+this feature based on privacy settings.
+○ Appropriate error messages should be displayed if the start date and time are not valid.
+○ The end date and time must be after the start date and time.
+○ Appropriate error messages should be displayed if the end date and time are not valid.
+○ There should be a minimum 2 and maximum 5 limit for the number of poll options. The admin
+should be notified of these limits when creating the poll.
+○ ensure that users can vote only once, and they cannot revise their choices once submitted.
+○ The admin should have the option to:○
+○
+○
+○
+○
+○
+○
+○
+■ Publish Immediately: Publish the poll as soon as it's created with the specified start and
+end dates.
+■ Schedule Publication: Set a specific date and time for the poll to be published, with the
+specified start and end dates.
+There should be an option that allows the admin to review how the poll will appear to users
+before finalizing and publishing it.
+There should be a "Publish" button that allows the admin to save the poll and make it live
+according to the chosen publishing options and timeframe.
+There should be a "Cancel" or "Discard" button that allows the admin to cancel the poll
+creation process, with a confirmation prompt to prevent accidental data loss.
+Within the admin dashboard or poll management section, there should be a clear and
+accessible option to schedule the start date and end date of the selected poll.
+When scheduling the start date and end date, the admin should be able to specify “Start Date
+and Time” and “End Date and Time”, the exact date and time when the poll should become
+visible to users and end.
+The start/end date and time must be in the future.
+be able to view the results of a poll after it has ended, provided that the admin has enabled
+this feature based on privacy settings.
+Prior to the scheduled start date, the poll should not be visible to users, and users should not
+be able to participate in or view the poll.
+Specify the privacy settings for the poll and set the poll's privacy setting to "public," so that it is available to
+all users or to "members only," so that only HyeID members can participate and view the poll.
+Acceptance Criteria:
+○ Within the admin dashboard or poll management section, there should be a clear and
+accessible option to specify the privacy settings for the selected poll.
+○ if any of the questions in a poll has at least one response, I cannot change the privacy settings
+of the poll.
+○ The admin should be presented with two privacy setting options:
+○ “Public”: Selecting this option will make the poll available to all users, including both members
+and non-members.
+○ “Members Only”: Selecting this option will restrict access to the poll, making it available to
+members only.
+○ If the admin doesn't explicitly select a privacy setting during poll creation, there should be a
+default setting to "Public"
+○ The admin should have the ability to change the privacy setting of the poll at any time, both
+during poll creation and after the poll has been created.
+○ be able to view the results of a poll after it has ended, provided that the admin has enabled
+this feature based on privacy settings.
+Create a poll with 1 query, each having a maximum of 5 options, so that users can provide their preferences
+on various topics.
+Acceptance Criteria:○ The admin should be able to add 1 query (questions) to the poll.
+○ the admin should be able to add a maximum of 5 options (choices).
+○ The admin should be able to add, edit, and delete queries and options within the poll creation
+interface.
+○ The admin should have the flexibility to specify the type of query. The types are as follows:
+■ Multiple question with single response
+■ Multiple question with multiple responses
+○ The admin should have the ability to change the order of queries (questions) within the poll.
+○ There should be a preview option that allows the admin to review how the poll will appear to
+users before finalizing and publishing it.
+○ ensure that users can vote only once, and they cannot revise their choices once submitted.
+View the responses for each question, including the distribution of answers, to see user preferences and
+trends.
+Acceptance Criteria:
+○ Within the admin dashboard or poll management section, there should be a clear and
+accessible option to view responses for the selected poll.
+○ The responses for each question should be displayed, including the distribution of answers.
+○ The distribution of answers should show the count of participants who selected each option
+for multiple-choice questions.
+○ Ensure that the admin can access response data for all questions within the poll.
+○ Ensure the identities of voters are not revealed to anyone, including the admin.
+○ Ensure that users can vote only once, and they cannot revise their choices once submitted.
+Ensure that all polls created are permanently stored in the admin panel, allowing me to access and manage
+them at any time.
+Acceptance Criteria:
+○ Within the admin dashboard or poll management section, there should be a dedicated and
+accessible space to store and manage all created polls.
+○ Any poll created by the admin should be automatically and permanently stored in this admin
+panel for future access.
+○ The admin should be able to search for specific polls by keywords, titles, or other relevant
+criteria.
+○ Polls in the admin panel should remain accessible and manageable at any time, regardless of
+their publication status.
+Disable an entire poll, ensuring that it is no longer accessible to participants and does not appear in the
+public view.
+Acceptance Criteria:
+○ Within the admin dashboard or poll management section, there should be a clear and
+accessible option to disable a poll.
+○ Disabling a poll should ensure that it is no longer accessible to participants, and it should not
+appear in the public view or search results.○ There should be a confirmation prompt to prevent accidental disabling of a poll.
+○ Once a poll is disabled, it should be permanently saved in the admin panel
+○ Poll can be disabled while live
+Have a search or filter functionality in the admin panel, allowing me to easily locate specific polls based on
+their titles or other relevant criteria. 6
+Acceptance Criteria:
+○ Within the admin panel, there should be a clear and accessible search or filter functionality.
+○ The search or filter functionality should allow the admin to search for specific polls based on
+criteria such as titles, descriptions, status, dates, privacy settings, disabled/enabled, frequency,
+scheduled or not or other relevant attributes.
+○ The admin should be able to clear the search/filter criteria to view all polls again.
+As a poll participant I want to be able to:
+ACCESS A POLL ON HYEID PLATFORM, WHERE THE START DATE AND END DATE INDICATES WHEN THE POLL
+BECOMES AVAILABLE AND EXPIRES FOR PARTICIPATION.
+Acceptance Criteria:
+○ I should see polls displayed on my feed or in a dedicated poll section of the platform.
+○ The start date of a poll should be clearly visible, indicating when the poll becomes available for
+participation.
+○ If the start date has not been reached, I should not be able to vote or access the poll.
+○ Once the start date is reached, the poll should become accessible for participation.
+○ I should have the ability to provide my responses to the poll questions by selecting answer
+options.
+○ After submitting my responses, I should receive confirmation that my vote has been counted,
+and I may see the current poll results based on percentage.
+○ If the submission has been done, I should not be able to vote again or modify my responses.
+○ The platform should handle timezone considerations to ensure that the start and end dates are
+accurate for participants in different regions.
+○ When I access a poll, the end date of the poll should be clearly displayed to me, indicating the
+deadline for submitting my responses.
+○ If the end date has not yet passed, I should be able to vote or provide my responses to the poll
+questions.
+○ If the end date has already passed, I should not be able to vote or modify my responses, and
+there should be a clear indication that the poll is closed. The ended poll is visible until it has
+been disabled by the admin.
+
+......
+
+
+
+
+
+HyeID Social Media Platform
+Documents
+HyeID: Polling
+HyeID: Posting and Commenting
+HyeID: Apply for HyeID and Add Family Member
+Auth
+Executive Summary
+Our product prioritizes the development of a user-centric social media platform, ensuring a seamless
+experience for users at every stage. The core features include:
+User Onboarding:
+● Prompted to become members when attempting actions.
+Membership Process:
+● Membership involves application, payment, and admin approval.
+● Approved members can make three types of posts: connections only (default), members only and
+public.
+User Status and Verification:
+● Verified status for members, cardholder status with activated HyeID cards.
+● Icons indicate verified or cardholder status next to users’ names.
+Profile Management:
+● Members can activate their HyeID cards and manage post visibility settings.
+● Search functionality to find and connect with other members.
+● Follow members to connect with other users.
+● Ability to fill personal profiles with main and additional information.
+Membership Application Process:
+The membership application process is a critical component of our platform, allowing users to transition from
+followers to fully-engaged members. As of the current development stage, the application process
+functionality will be successfully implemented as a standalone module via Iframe integration.
+Key Components:
+● User Registration
+● Membership Application & Approval
+● Post Creation & Visibility Options
+● User Verification
+● Admin Review & Management
+● Diverse Post Types
+● Profile Management
+● Member Search
+● Follows and Unfollows
+● Account Takeover by Adult Family MembersUser Stories
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+General
+As a new user, I want to automatically have "follower" status upon joining.
+○ Other statuses are:
+■ Pending Payment - when the payment is not done
+■ Pending Verification - when waiting for the approval
+■ Need Documentation - The user must see a message specifying the missing document
+■ Pending Verification - When the documents and all the necessary information is filled
+■ Pending Approval - approved by the customer service, waiting for the manager to
+approve
+■ Approved - approved by the manager
+■ Card Printed
+■ Card Sent
+■ Waiting Activation - after the “Card Sent” this status becomes active in 24 hours. To
+activate, the user receives a physical letter with 6-digit code.
+■ Active - The account is activated.
+■ Disabled - the account is deactivated
+As a follower, I want to be able to see only public posts.
+As a follower, I should not be able to take any actions on the platform.
+As a follower, when I attempt to take an action (e.g., create a status, like any status, write a comment,
+etc.), I want to see a prompt encouraging me to become a member.
+As a user applying for membership, I want to be able to make a payment as part of the application
+process.
+As a user, I want to receive notification upon approval from the admin.
+As a member, I want to make three types of posts: connections only, members only (visible to all HyeID
+members), and public (visible to everyone, default).
+As a member, I want to see a corresponding icon or indicator next to my name indicating my "verified"
+or “cardholder” status after being verified as well as after activating the HyeID card.
+As a member, I want to have access to private posts.
+As a member, I want to have all the access to all actions on the platform.
+Search for Cardholders
+Search can be done only by approved members
+search for cardholders using an input text field, so that I can find specific individuals based on their
+names or other relevant keywords.
+have the option to search for cardholders based on their country or location using a radio select field,
+allowing me to filter results geographically.
+filter cardholders by selecting a specific country from a dropdown menu, providing a more refined
+search experience.
+filter cardholders by selecting a specific profession from a dropdown menu, enabling me to find
+individuals with specific occupational backgrounds.● filter cardholders by selecting an ancestor's origin from a dropdown menu, helping me connect with
+individuals who share similar ancestry.
+● filter cardholders based on their organization affinity by selecting from a dropdown menu, allowing me
+to find individuals associated with specific organizations.
+● the ability to reset the search, which opens a page displaying cardholder quantity statistics and a
+"Search Cardholders" button.
+● the option to refine my search, which opens the search form again, enabling me to adjust my search
+criteria.
+● initiate the search by clicking a "Search" button, providing me with a list of cardholders based on my
+selected criteria.
+● the ability to close the search form by clicking a "Close" button, ensuring a clean and intuitive user
+interface.
+Search Results Page:
+● search results to display the photo, first name, last name, and country of found cardholders, providing a
+quick overview.
+● "Preview" button for public profiles, allowing me to get more details about a cardholder's profile.
+● lock icon for private profiles, indicating that certain details are not accessible due to privacy settings.
+● "Connect" button enabled for public profiles, allowing me to establish a connection with other
+cardholders.
+● "Connect" button disabled for private profiles, indicating that connection requests cannot be sent for
+private accounts.
+● number displayed showing how many cardholders were found based on my search criteria, providing
+context for the search results.
+● the ability to reset the search, which opens a page displaying cardholder statistics and a "Search
+Cardholders" button.
+● the option to refine my search, which opens the search form again, enabling me to adjust my search
+criteria.
+Profile Preview Page:
+● When previewing a cardholder's profile, I want to see their photo, first name, last name, and additional
+information fields.
+● see the email of a cardholder on their profile preview page, but only after following
+● see the phone number of a cardholder on their profile preview page, but only after following and if he
+have set the number as public.
+● if the searched user is not a person whom i follow and the profile is public, I want the email and phone
+number to be hidden on their profile preview page.
+● if the searched user is a person whom i follow, I want the email to be visible, and the phone number
+visible only if the searched user has set the number as public.
+Followers (who follow me) and Followings (whom I follow)
+● Following can be done only by approved members● It should be possible to follow a public profile by clicking on the “Follow” button from the searched
+results or by entering the user profile from homepage by clicking on the image or name of the user
+from the status post
+● In case the searched profile is private, the “Follow” button is disabled
+● In case the searched profile is private, there’s a non-clickable lock icon instead of the “preview” button
+● When following, “preview” button should be visible
+● Followers and followings should be visible in corresponding tabs list
+○ The contact info info in the lists should have:
+■ Image, First Name, Last Name
+■ When clicking on the contact, the profile page should open
+● When clicking on the “Follow” button, the receiving side should get a corresponding notification
+● No notification is sent when unfollowing
+Remove Follower/Unfollow
+● The user should be able to remove a follower by clicking on the “Follow” button
+●
+●
+●
+●
+Profile functionality
+User’s own profile preview page should show:
+○ Photo
+○ First Name, Last Name
+○ Status
+○ Email
+○ Phone
+The user should be able Edit the profile by clicking on a corresponding button/icon
+The editing functionality is available for members only, otherwise, editing is not allowed
+The user should be able to make the profile or the phone number private/public by by clicking on a
+corresponding button
+Profile Private/Public
+● The user should be able to make the profile private/public by by clicking on a corresponding button
+● When the profile is private, the profile is available for all the Hyeid users without the possibility to view
+profile details, only image, first name/last name are available.
+● When private, the profile can still be searched and found, still can be found in “my followers” and “my
+followings” lists, without any option to view additional information or follow action.
+Phone Number Private/Public
+● The user should be able to make his phone number private/public by by clicking on a corresponding
+button
+● When the phone number is private, it’s not visible for any other user.
+Notifications
+● A bell icon should be added on the interface.
+● See a corresponding number of missed notifications on the bell icon.● When clicking on the icon a modal should open to view notifications
+● The notification window should be scrollable
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+Account Takeover
+As an eligible family member who has turned 18, I want to receive an email notification informing me
+that I am now eligible to take over the Connectto Social Media account that was registered by the
+householder.
+As an eligible family member, when I click the link in the email, I want to be redirected to the
+registration page, where I am welcomed and asked to follow steps for verification.
+As an eligible family member, I want to see the email address I have been registered with on the next
+page, that should not be editable.
+As an eligible family member, I want to submit my actions by pressing "NEXT" and be redirected to the
+verification page.
+As an eligible family member, after submitting my actions, I want a verification code to be sent to the
+initial email address for confirmation.
+As an eligible family member, on the verification page, I want to fill in the received verification code and
+press "NEXT" for the next step.
+As an eligible family member, after verifying my email, I want to see the phone number I have been
+registered with and be given the option to keep it or change it.
+As an eligible family member, after confirming my phone number, I want a verification code to be sent
+to either the initial or the new phone number based on my choice.
+As an eligible family member, on the phone verification page, I want to fill in the received verification
+code and press "NEXT" for the next step.
+As an eligible family member, after completing email and phone verification, I want to be directed to a
+page where I can create a password (Password, Confirm Password).
+As an eligible family member, after creating the password, I want to receive a success message
+indicating that the account takeover process is complete.
+As an eligible family member, after the successful account takeover, I want to be able to log in to my
+Connectto Social Media account using the newly created password.
+Payment
+As a non-wallet user, I want to create a PIN when I first attempt to make a payment, so that my payment
+transactions are secured.
+Acceptance Criteria:
+●
+●
+●
+●
+When the user attempts to make a payment, they are prompted to create a PIN.
+The PIN should consist of 4 digits
+The user should confirm the PIN, by entering the same PIN for the second time.
+The system should display an error message if the user does not meet the PIN length or pattern
+requirements.
+● After the user enters the PIN, the system should validate its format and confirm the creation.
+● Once the user successfully creates and confirms the PIN, they should be redirected to the card details
+input.As a non-wallet user, I want to enter any card details after setting up my PIN, so that I can make the payment:
+Acceptance Criteria:
+○ The user is presented with a form to enter card details:
+■ Card number: 13-19 digits, only numbers
+■ Expiration month/year
+■ Cardholder name
+■ CVV: 3 digits,
+○ The system should validate the card.
+○ After the card details are successfully entered the user should be directed to the payment screen where
+the user should get the following info as separate components:
+■ Card payment amount
+■ Transfer fee
+■ Fee charged from the card
+■ Donation amount, if present
+■ Total amount
+○ Every time the user should verify the payment, by entering their pin code.
+■ After 4 incorrect attempts the user is blocked for 15 minutes for the first time,
+■ 30 minutes for the second time,
+■ 1 hour for the 3rd time
+■ And is finally blocked and asked to contact admin when carries out 4 incorrect attempts
+for the 4th time
+○ After pin verification, a code is sent to the registered phone number. (6 digits).
+○ The user
+■ Enters the right code and gets authorized
+■ Enters incorrect code and fails authorization
+1. After 4 incorrect attempts the user is blocked for 15 minutes for the first time,
+2. 30 minutes for the second time,
+3. And is finally blocked and asked to contact admin when carries out 4 incorrect
+attempts for the 3rd time
+■ Requests for the code to be resent (after which the above two points are again
+applicable)
+○ Upon successful authorization, the system should charge the user’s card immediately.
+○ If the payment is successful, the user should be shown a confirmation screen with a success
+message and redirects to the home page (e.g., "Payment successful").
+○ If the transaction fails (e.g., due to insufficient funds or an invalid card), the user should receive
+an error message with a prompt to try again or use another card.
+○ After the transaction is successful, the card should be attached to the user’s wallet for future
+payments.
+As a wallet user, I want to select an already attached card or enter new card details, so that I can complete the
+payment using a valid card.
+Acceptance Criteria:● When the user attempts to make a payment, they are prompted to enter their PIN.
+● The user should be able to
+○ use a new card
+■ The user is presented with a form to enter card details:
+● Card number: 13-19 digits, only numbers
+● Expiration month/year
+● Cardholder name
+● CVV: 3 digits,
+■ The system should validate the card.
+○ select one of the attached cards for the payment
+● After these steps the user is directed to the payment screen where the user should get the following
+info as separate components:
+■ Card payment amount
+■ Transfer fee
+■ Fee charged from the card
+■ Donation amount, if present
+■ Total amount
+● Every time the user should verify the payment, by entering their pin code.
+○ After 4 incorrect attempts the user is blocked for 15 minutes for the first time,
+○ 30 minutes for the second time,
+○ 1 hour for the 3rd time
+○ And is finally blocked and asked to contact admin when carries out 4 incorrect attempts for the
+4th time
+● After pin verification, a code is sent to the registered phone number. (6 digits).
+○ The user
+■ Enters the right code and gets authorized
+■ Enters incorrect code and fails authorisation
+1. After 4 incorrect attempts the user is blocked for 15 minutes for the first time,
+2. 30 minutes for the second time,
+3. And is finally blocked and asked to contact admin when carries out 4 incorrect
+attempts for the 3rd time
+■ Requests for the code to be resent (after which the above two points are again
+applicable)
+● Upon successful authorization, the system should charge the user’s card immediately.
+● If the payment is successful, the user should be shown a confirmation screen with a success message
+and redirects to the home page (e.g., "Payment successful").
+● If the transaction fails (e.g., due to insufficient funds or an invalid card), the user should receive an
+error message with a prompt to try again or use another card.
+● NOTE: When a wallet user selects a new card for payment, the card details are not stored.
+
+......
+
+HyeID Status Post
+Idea Bank
+● tag other HyeID members, "@" followed by their name, so I can mention them in my post and notify
+them of the content I am sharing.
+● include hashtags in my post by typing "#" followed by relevant keywords or phrases, so I can categorize
+my content and make it discoverable to others searching for similar topics.
+● share a post on other social media platforms, such as Facebook, LinkedIn and Twitter, sharing the
+same content across multiple platforms.
+Comment Status Post
+As a HyeID member, I want to be able to:
+● add comments to a status post, allowing me to share my thoughts, opinions, or feedback on the
+content
+● reply to specific comments within a status post's comment thread, facilitating focused and threaded
+discussions.
+○ Only 1 level of reply is available
+● the ability to like the comment, allowing me to express my agreement in response to a comment.
+○ Receive notification when my comment is being liked
+● have the option to edit or delete my own comments on a status post, in case I make a mistake or
+change my mind about a comment I've posted.
+● see comments on status posts in a chronological order, making it easy to follow the conversation's
+flow and progression.
+● report comments that violate community guidelines, ensuring a safe and respectful commenting
+environment.
+○ Spam, Scam, False Information
+○ Adult Content
+○ Terrorism
+○ Abuse, Bullying, Harassment
+○ Suicide, Self-injury
+○ Violence, Hate Speech
+○ Illegal Sale
+○ Account is Hacked
+● delete comments on my own status posts, providing control over the content I've shared.
+● sort comments by different criteria, such as newest, oldest, most popular, by the number of likes or
+most recent to better manage and explore discussions on a status post.
+● have the platform to notify me of comments and replies in comments of my own posts, ensuring I stay
+engaged in conversations and don't miss important interactions.
+● have the platform to notify me of replies to me only, on other members’ status posts I've commented
+on, allowing me to stay engaged even when I'm not actively on the platform.
+● have the commenting feature to support the attachment of images to enhance the context and
+content of my comments.● have the commenting feature to include a character limit of 500 symbols for comments to ensure that
+discussions remain concise and to the point.
+● hide or collapse long comment threads within a status post to reduce clutter and focus on the most
+relevant comments.
+● see the date and time of comments to provide context and help me identify recent versus older
+comments.
+● In case the comment has been written by a public user and the account has been set to private after
+leaving a comment, the name/surname should become hidden and show “Anonymous User” instead.
+As a HyeID admin I want to be able to:
+● review and moderate user-generated comments and reports and detect and handle comments that
+contain hate speech, harassment, or other forms of harmful content, taking appropriate actions such
+as removing comments.
+● Reported comment is visible with the whole thread and the status post in the reports section of the
+admin panel
+● make sure all users do not have availability to comment on any status post generated by the admins.
+Create Status Post
+As a HyeID member, I want to be able to:
+● compose a post by clicking on the "Create a post" button, so I can share my thoughts and updates with
+my connections.
+● type my desired text directly into the textbox with formatting options such as bold, italic, and
+underline styles, so I can emphasize specific words.
+● Attach a photo
+● set the privacy settings for my post, choosing whether it should be visible to all users and be public,
+my connections only or to members only, ensuring the appropriate level of visibility and control over
+my content.
+● receive notifications when others interact with my posts, such as liking, allowing me to engage with
+them.
+● receive notifications when admin makes a status post
+○ Notification badge should indicate the quantity of missed notifications
+○ The notifications coming from admin are always placed on the very top
+○ Only HyeID members can interact with admin’s posts, such as put likes
+● edit my posts after publishing them, ensuring that I can make any necessary changes or corrections to
+the content even after it has been shared.
+● delete my posts if I no longer want them to be visible on the platform, providing me with control over
+the content I have shared.
+● see home feed page that displays a chronological stream of posts from my connections, so I can stay
+updated with the latest content from my social network.
+● interact with posts directly from the feed, so I can like content without having to navigate to
+connection’s profile page.
+○ In case the user’s profile is set to “private”, name and surname are not shown in the list of the
+users who liked the post●
+●
+●
+●
+●
+○ Unlike when clicked on the like button for the second time
+visit a connection's profile and see a personalized feed that displays a chronological stream of posts,
+providing insights into their recent activities and content.
+see the number of likes for each post displayed in the home feed page
+see the names of the public members who liked my connection’s post
+report a post with inappropriate content, so that the admin can take care of the post and remove it if
+needed.
+○ Spam, Scam, False Information
+○ Adult Content
+○ Terrorism
+○ Abuse, Bullying, Harassment
+○ Suicide, Self-injury
+○ Violence, Hate Speech
+○ Illegal Sale
+○ Account is Hacked
+receive a notification/email to clearly state the action taken by the admin, such as "Your report has
+been approved" or "Your report has been rejected," so I have a clear understanding of the outcome.
+○ In case the user is offline in the platform, he gets an email indicating the report outcome
+○ In case the user is online in the platform, he receives an email and a notification in the
+platform indicating the report outcome
+As a HyeID admin I want to be able to:
+● review and moderate user-generated posts and reports and detect and handle posts that contain hate
+speech, harassment, or other forms of harmful content, taking appropriate actions such as removing
+posts.
+○ In case more than 1 user has reported the same post with different reasons and admin accepts
+one of the reasons, all other reports are automatically accepted with the reason chosen by the
+admin
+○ The accepted reported post is removed from the UI but saved in the admin panel and
+accessible for the admin
+○ Admin can delete his own post only
+● compose a post by clicking on the "Create a post" button with my desired text with formatting options
+such as emojis, bold, italic, and underline styles, so I can emphasize specific words.
+● Input embed URLs and attach photos to my post
+● set the privacy settings for my post, choosing whether it should be visible to all users or only to HyeID
+members
+○ The privacy is visible on the published post
+○ The privacy can be changed after the post is published by clicking on the privacy indicator
