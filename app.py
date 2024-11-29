@@ -1,14 +1,11 @@
 from flask import Flask, render_template, request, jsonify, send_file
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
-from gtts import gTTS
-import assemblyai as aai
 from groq import Groq
 from test import read_text_from_file
 
 client = Groq(api_key='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')
 vectorizer = TfidfVectorizer()
-aai.settings.api_key = "c3bf147b8ab0413e8a22ad77960934a4"
 app = Flask(__name__)
 
 
